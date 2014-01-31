@@ -19,6 +19,7 @@
 var app = {
     // Application Constructor
     initialize: function() {
+    	alert('initialize');
         this.bindEvents();
     },
     // Bind Event Listeners
@@ -43,7 +44,8 @@ var app = {
 
         listeningElement.setAttribute('style', 'display:none;');
         receivedElement.setAttribute('style', 'display:block;');
-
+		alert('Received Event: ' + id);
         console.log('Received Event: ' + id);
     }
 };
+

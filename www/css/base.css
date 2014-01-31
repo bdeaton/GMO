@@ -1,0 +1,214 @@
+/*global elements*/
+body,html{
+	background:#fff;
+	font-size:24px;
+	color:#0b0a09;
+	font-family: Oswald;
+}
+a{
+	text-decoration:underline;
+	cursor:pointer;
+	font-size:48px;
+}
+a:link,
+a:visited,
+a:hover,
+a:active{
+	color:inherit;
+}
+ul{
+	margin:0;
+	padding:0;	
+}
+li{
+	list-style:none;	
+}
+input[type=range]{
+  
+}
+
+/*	PAGE-LEVEL	*/
+body{
+	
+}
+	.page-container{
+		
+	}
+		.page{
+			
+		}
+			section,
+			.section{
+				background:green;
+				padding:35px;
+				padding:5.46875%;
+			}
+				section h3,
+				.section h3{
+					background:purple;	
+				}
+					section h3 span,
+					.section h3 span{
+						color:yellow;	
+					}
+				section h4,
+				.section h4{
+					background:pink;	
+				}
+					section h4 span,
+					.section h4 span{
+						color:orange;	
+					}
+			.section-globe{
+				background:salmon;
+			}
+				.globe {
+					margin:0 auto;
+				}
+			.section-stats{
+				background:magenta;
+			}
+			
+				ul.stats{
+					
+				}
+					ul.stats li{
+						
+					}
+						ul.stats li .stats-icon{
+							
+						}
+						ul.stats li .stats-value{
+							
+						}
+						ul.stats li label{
+							
+						}
+					ul.stats li.stats-gospel{
+						
+					}
+					ul.stats li.stats-decisions{
+						
+					}
+					ul.stats li.stats-connections{
+						
+					}
+
+			.section-calculator{
+				background:seagreen;
+			}
+				.form-calculator{
+					
+				}
+			  
+				  .calculator-equals{
+					  
+				  }
+				  .form-calculator output{
+				  	  
+				  }
+				  .form-calculator label{
+				  	  
+				  }
+			.section-calculator h4{
+				background:whitesmoke;
+			}
+			.list-buttons{
+				overflow:hidden;
+			}
+				.list-buttons li{
+					float:left;
+				}
+				.list-buttons li.button-call{
+					
+				}
+				.list-buttons li.button-email{
+					
+				}
+					.list-buttons li button{
+						background:yellow;
+						border-radius:8px;
+					}
+					.list-buttons li.button-call button{
+						
+					}
+					.list-buttons li.button-email button{
+						
+					}
+						.list-buttons li button span{
+							text-transform:uppercase;
+							color:blue;
+						}
+						.list-buttons li.button-call button span{
+							
+						}
+						.list-buttons li.button-email button span{
+							
+						}
+
+			.section-video{
+				background:paleturquoise;
+			}
+				.video-container{
+					border:3px solid red;
+				}
+					.video-container iframe{
+						border:3px solid yellow;
+					}
+			
+			.section-share{
+				
+			}
+				.section-share ul.list-share{
+					
+				}
+					ul.list-share li{
+						
+					}
+					ul.list-share li.first{
+						
+					}
+					ul.list-share li.share-facebook{
+						
+					}
+					ul.list-share li.share-twitter{
+						
+					}
+					ul.list-share li.share-email{
+						
+					}
+						ul.list-share li i{
+							
+						}
+						ul.list-share li.share-facebook i{
+							
+						}
+						ul.list-share li.share-twitter i{
+							
+						}
+						ul.list-share li.share-email i{
+							
+						}
+					
+			.footer-primary{
+				background:yellowgreen;
+			}
+				.footer-primary .logo{
+					display:block;
+					width:100px;
+					height:40px;
+					outline:1px solid red;
+				}
+
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
