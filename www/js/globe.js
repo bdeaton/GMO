@@ -1,12 +1,12 @@
-onlineForLife.Globe = {
+GMO.Globe = {
 	init: function(){
-		onlineForLife.Globe.setupGlobe();
+		GMO.Globe.setupGlobe();
 	},	
 
 	setupGlobe: function(){
 		var fullHeight = 900;
 		var fullWidth = 3400;
-		var maxWidth = 500;
+		var maxWidth = null;
 		var $section = $('.section-globe');
 		var $globe = $section.find('.globe');
 		var windowWidth = $(window).width();
@@ -15,7 +15,7 @@ onlineForLife.Globe = {
 		var paddingRight = parseInt($section.css('paddingRight').replace('px',''));
 		var paddingTotal = paddingLeft+paddingRight;
 		var windowWidth = windowWidth - paddingTotal;
-		if(windowWidth>maxWidth){
+		if(maxWidth!=null && windowWidth>maxWidth){
 			windowWidth = maxWidth;
 		}
 		var scale = windowWidth/fullHeight;

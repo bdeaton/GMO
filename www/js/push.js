@@ -1,7 +1,7 @@
-onlineForLife.Push = {
+GMO.Push = {
 	init: function(){
 		//console.log('push init');
-		onlineForLife.Push.getCurrentSettings();
+		GMO.Push.getCurrentSettings();
 	},
 
 	getCurrentSettings: function(){
