@@ -75,6 +75,34 @@ body{
 				.globe {
 					margin:0 auto;
 				}
+				.map-points-container{
+					position:relative;
+				}
+				.version-blue .map-points-container{
+					background:rgba(0,0,255,0.5);
+				}
+				
+					.map-points-container i{
+						display:block;
+						width:11px;
+						height:11px;
+						background:transparent url(../img/icon-map-point.png) no-repeat 0 0;
+						position:absolute;
+					}
+					.map-points-container i.displayed-false{
+						display:none;
+					}
+					.map-points-container i.type-1{
+						background-color:blue;
+					}
+					.map-points-container i.type-2{
+						background-color:green;
+					}
+					.map-points-container i.type-3{
+						background-color:orange;
+					}
+					
+				
 			.section-stats{
 				padding-top:0;
 				padding-bottom:10.5%;
@@ -217,7 +245,10 @@ body{
 						background: -o-linear-gradient(#37a5c3, #1a7087);
 						background: -moz-linear-gradient(#37a5c3, #1a7087);
 						background: linear-gradient(#37a5c3, #1a7087);
-						
+						width: 222px;
+						height: 86px;
+						display: block;
+						padding: 0;
 					}
 					.list-buttons li.button-call button{
 						float:right;
@@ -311,4 +342,11 @@ body{
 				
 				
 				
+				
+				
+				.earth-foreground,
+				.earth-background,
+				.section-stats{
+					1-webkit-filter: blur(2px);
+				}
 				

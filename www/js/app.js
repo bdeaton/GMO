@@ -4,6 +4,7 @@ GMO.Data = GMO.Data || {};
 GMO.Globe = GMO.Globe || {};
 GMO.Tracking = GMO.Tracking || {};
 GMO.Push = GMO.Push || {};
+window.AppData = {};
 GMO.App = {
 	init: function(){
 		GMO.App.setupListeners();
@@ -11,12 +12,22 @@ GMO.App = {
 	},	
 
 	setupListeners:function(){
+		//document.addEventListener('touchmove', function (e) {e.preventDefault();}, false);
 		$(document).on("AppDataLoaded", GMO.App.setupApp);
 	},	
 
 	setupApp:function(){
-		GMO.Globe.setupGlobe();
+		//console.log('}}}}}}}}}}}}}}}}}} setupApp');
+		GMO.Globe.init();
+		GMO.App.buildStats();
 		GMO.App.setupHandlers();
+	},	
+
+	buildStats:function(){
+		var $gospelValue = $('.stats-gospel .stats-value');
+		var $decisionsValue = $('.stats-decisions .stats-value');
+		var $connectionsValue = $('.stats-connections .stats-value');
+		
 	},	
 
 	setupHandlers:function(){
@@ -35,28 +46,34 @@ GMO.App = {
 
 	getAppData:function(){
 		var url = 'js/api-app.js';
+		GMO.App.getAPIData('App',url,"AppDataLoaded","AppDataFail",'load');
+	},
+
+	getAPIData:function(key,url,triggerSuccess,triggerFail,method){
 		var jqxhr = $.get(url, function(data){},'json');
 		jqxhr.done(function(data) {
-			GMO.App.handleApiSuccess('App',data);
+			GMO.App.handleApiSuccess(key,data,triggerSuccess,method);
 		});
 		jqxhr.fail(function(data) {
-			GMO.App.handleApiError('App',data);
+			GMO.App.handleApiError(key,data,triggerFail,method);
 		});
-	},	
+	},
 
-	handleApiSuccess:function(key,response){
-		console.log('handleApiSuccess');
-		console.log(key);
-		console.log(response);
+	handleApiSuccess:function(key,response,trigger,method){
+		//console.log('handleApiSuccess');
+		//console.log(key);
+		//console.log(response);
+		//console.log(trigger);
 		var data = GMO.Data || {};
 		data[key]=response;
-		$.event.trigger({type:"AppDataLoaded"});
+		AppData[key]=response;
+		$(document).trigger({type:trigger,method:method});
 	},	
 
 	handleApiError:function(key,response){
-		console.log('handleApiError');
-		console.log(key);
-		console.log(response);
+		//console.log('handleApiError');
+		//console.log(key);
+		//console.log(response);
 	},
 	
 	setDefaultInput:function(){
@@ -68,29 +85,29 @@ GMO.App = {
 	},
 	
 	handleInputChange:function($input){
-		console.log('handleFormChange');
+		//console.log('handleFormChange');
 		var $form = $('.form-calculator');
 		var $result = $form.find('#calculatorResult');
 		
 		var inputVal = $input.val().replace('$','').replace(',','').replace(',','').replace(',','').replace(',','').replace(',','').replace(',','').replace(',','');
-		console.log('TYPE inputVal 1: ',typeof(inputVal));
-		console.log('inputVal 1: ',inputVal);
+		//console.log('TYPE inputVal 1: ',typeof(inputVal));
+		//console.log('inputVal 1: ',inputVal);
 		if(inputVal==''){
-			console.log('inputVal ==""');
+			//console.log('inputVal ==""');
 			inputVal=0;
 		}
 		else{
-			console.log('inputVal ELSE');
+			//console.log('inputVal ELSE');
 			inputVal = parseInt(inputVal);
 		}
-		console.log('TYPE inputVal 2: ',typeof(inputVal));
-		console.log('inputVal 2: ',inputVal);
+		//console.log('TYPE inputVal 2: ',typeof(inputVal));
+		//console.log('inputVal 2: ',inputVal);
 		$input.data('inputVal',inputVal);
 		var formattedVal = inputVal;
 		formattedVal = formattedVal.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
-		console.log('formattedVal 1: ',formattedVal);
+		//console.log('formattedVal 1: ',formattedVal);
 		formattedVal = '$'+formattedVal;
-		console.log('formattedVal 2: ',formattedVal);
+		//console.log('formattedVal 2: ',formattedVal);
 		
 		var test = false;
 		
@@ -121,11 +138,11 @@ GMO.App = {
 			else{
 				output = string;
 			}
-			console.log('string: ' + string);
-			console.log('string1: ' + string1);
-			console.log('string2: ' + string2);
-			console.log('len: ' + len);
-			console.log('output: ' + output);
+			//console.log('string: ' + string);
+			//console.log('string1: ' + string1);
+			//console.log('string2: ' + string2);
+			//console.log('len: ' + len);
+			//console.log('output: ' + output);
 		}	
 		
 		
@@ -136,7 +153,7 @@ GMO.App = {
 		var calcResult = inputVal*multiplier;
 		calcResult = calcResult.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')+'+';
 		$result.val(calcResult);
-		console.log('calcResult 1: ',calcResult);
+		//console.log('calcResult 1: ',calcResult);
 		
 		//toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')
 		

@@ -1,7 +1,8 @@
 {
 	"config": {
 		"globe": {
-			"maxWidth": null
+			"maxWidth": null,
+			"maxHeight": 500
 		},
 		"calculator": {
 			"multiplier": 20
